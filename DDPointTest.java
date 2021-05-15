@@ -44,5 +44,13 @@ public class DDPointTest {
         assertTrue(a.equals(c));
     }
 
+    @Theory
+    public void hashCodeIsEqual(Point a, Point b) {
+        assumeTrue(a != null);
+        assumeTrue(b != null);
 
+        assumeTrue(a.equals(b));
+
+        assertEquals(a.hashCode(), b.hashCode());
+    }
 }
